@@ -1,0 +1,18 @@
+/*
+Вывести на экран все буквы английского алфавита.
+ */
+public class Task1 {
+    public static void letter(){
+        char letter;
+        int quantity=0;
+        for (letter='A'; letter<='Z'; letter++) {
+            System.out.print(letter + ",");
+            quantity++;
+        }
+        System.out.println();
+        System.out.println("Всього в англ. алфавіті " + quantity + " букв");
+    }
+    public static void main(String[] args) {
+    letter();
+    }
+}
