@@ -1,0 +1,27 @@
+/*Проверить баланс круглых скобок в выражении. Пример: “((x
+– 8)+a(y – 1))”.
+ */
+import java.util.Scanner;
+public class Task2 {
+    public static void audit(String text){
+        char [] brackets = text.toCharArray();
+        int quantity=0;
+        for (int i=0; i<brackets.length; i++) {
+            if (brackets[i] == ')')
+                quantity++;
+            if (brackets[i] == '(')
+                quantity--;
+        }
+        if (quantity==0)
+            System.out.println("Баланс дужок коректний");
+        else
+            System.out.println("Баланс дужок не коректний!!!!");
+    }
+    public static void main(String[] args) {
+        String text;
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введіть рівняння для перевірки балансу круглих дужок");
+        text = in.nextLine();
+        audit(text);
+    }
+}
