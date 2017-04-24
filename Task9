@@ -1,0 +1,25 @@
+/* Найти в предложении самое короткое и самое длинное слово. */
+
+import java.util.Scanner;
+public class Task3 {
+    public static void search(String text){
+        String min=text;
+        String max="";
+        String[] array = text.split(" ");
+        for (int i=0; i<array.length; i++) {
+         if (array[i].length() < min.length())
+             min = array[i];
+         if (array[i].length() > max.length())
+             max = array[i];
+        }
+        System.out.println("Найкоротше слово в реченні = " + min);
+        System.out.println("Найдовше слово в реченні = " + max);
+    }
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введіть речення");
+        String text = in.nextLine();
+        search(text);
+
+    }
+}
