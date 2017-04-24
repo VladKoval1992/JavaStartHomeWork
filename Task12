@@ -1,0 +1,44 @@
+/*Написать аналог String.indexOf(). */
+
+import java.util.Scanner;
+
+public class Task5 {
+
+    public static int indexOf(String text, String symbol, int fromIndex){
+        if (symbol.length() > text.length())
+            return -1;
+        if (fromIndex> text.length())
+            return -2;
+        for (int i = fromIndex; i <= text.length() - symbol.length(); i++) {
+            StringBuilder p = new StringBuilder();
+            for (int j = i; j < symbol.length() + i; j++)
+                p.append(text.charAt(j));
+            if (p.toString().equals(symbol))
+                return i;
+        }
+        return -3;
+    }
+
+    public static void ssarch (String text, String symbol, int fromIndex){
+        if (indexOf(text, symbol, fromIndex)>=0)
+            System.out.print("Елемент який ви шукаєте знаходиться на " + indexOf(text, symbol, fromIndex) + " позиції");
+        else  if (indexOf(text, symbol, fromIndex)==-1)
+            System.out.print("Елемент пошуку більший за текст");
+        else  if (indexOf(text, symbol, fromIndex)==-2)
+            System.out.print("Позиція пошуку за межами тексту");
+        else  if (indexOf(text, symbol, fromIndex)==-3)
+            System.out.print("Даного елементу немає в тексті");
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введіть текст");
+        String text = in.nextLine();
+        System.out.println("Введіть елемент пошуку");
+        String symbol = in.nextLine();
+        System.out.println("Введіть з якої позиції почати пошук");
+        int fromIndex = in.nextInt();
+
+        ssarch(text,symbol,fromIndex);
+    }
+}
