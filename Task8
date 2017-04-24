@@ -1,0 +1,21 @@
+/*Построить таблицу значений ф-и на отрезке [-1; 0.75]. */
+
+import java.util.Scanner;
+public class Task2 {
+    public static void calc (double a, double b){
+        while (a<b){
+         double calc = a*Math.pow((1+(2/(a+7))),a/10);
+         a = a + 0.05;
+            System.out.println();
+            System.out.printf("%.3f",calc);
+        }
+    }
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введіть початок відрізку");
+        double a = in.nextDouble();
+        System.out.println("Введіть кінець відрізку");
+        double b = in.nextDouble();
+        calc(a,b);
+    }
+}
