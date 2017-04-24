@@ -1,0 +1,19 @@
+/*Вывести на экран сумму цифр заданного числа. */
+import java.util.Scanner;
+public class Task4 {
+    public static void sum (String number) {
+        String[] convert = number.split("");
+        int newsum=0;
+        for(int i=0;i<convert.length;i++){
+            newsum+=Integer.parseInt(convert[i]);
+        }
+       System.out.println(newsum);
+    }
+    public static void main(String[] args) {
+        String number;
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введіть число");
+        number = in.nextLine();
+        sum(number);
+    }
+}
