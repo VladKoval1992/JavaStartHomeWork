@@ -1,0 +1,27 @@
+/* Написать аналог String.replace().*/
+import java.util.Scanner;
+public class Task4 {
+    public static char [] array (){
+       Scanner in = new Scanner(System.in);
+       System.out.println("Введіть текст");
+       String text = in.nextLine();
+       char[] chararray = text.toCharArray();
+       return chararray;
+    }
+    public static void replace(char oldChar, char newChar){
+        char[] array = array();
+        for (int i=0; i<array.length; i++) {
+            if (array[i] == oldChar)
+                array[i] = newChar;
+        }
+        System.out.println(array);
+    }
+    public static void main(String[] args) {
+       Scanner in = new Scanner(System.in);
+       System.out.println("Введіть літеру яку потрібно замінити");
+       char oldChar = in.nextLine().charAt(0);
+       System.out.println("Введіть літеру на яку потрібно замінити");
+       char newChar = in.nextLine().charAt(0);
+       replace(oldChar, newChar);
+       }
+}
